@@ -5,11 +5,13 @@ Home: https://github.com/ynqa/pandavro
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pandavro-feedstock/blob/master/LICENSE.txt)
 
 Summary: The interface between Avro and pandas DataFrame
 
+Development: https://github.com/ynqa/pandavro
 
+Documentation: https://github.com/ynqa/pandavro/blob/master/README.md
 
 Current build status
 ====================
