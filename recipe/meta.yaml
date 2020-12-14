@@ -1,5 +1,5 @@
 {% set name = "pandavro" %}
-{% set version = "1.5.2" %}
+{% set version = "1.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fd4ede1600cfc08150f28a7a1c1dd4abfbc87d76cd4a5b1639c8f55a04e97914
+  sha256: d098da34529fbb20de5fd1a6f231918d1b60941b25bea5dc87897ef0d472cb6f
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -22,7 +22,7 @@ requirements:
     - python >=3.5
     - fastavro >=0.14.11
     - numpy >=1.7.0
-    - pandas >=1.0.0
+    - pandas >=1.1.5
     - six >=1.9
 
 test:
@@ -33,9 +33,8 @@ about:
   home: https://github.com/ynqa/pandavro
   license: MIT
   license_family: MIT
-  # License file is manually packaged. Please see: https://github.com/ynqa/pandavro/pull/23
   license_file: LICENSE
-  summary: "The interface between Avro and pandas DataFrame"
+  summary: The interface between Avro and pandas DataFrame
   doc_url: https://github.com/ynqa/pandavro/blob/master/README.md
   dev_url: https://github.com/ynqa/pandavro
 
