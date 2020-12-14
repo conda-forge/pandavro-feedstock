@@ -22,7 +22,7 @@ requirements:
     - python >=3.5
     - fastavro >=0.14.11
     - numpy >=1.7.0
-    - pandas >=1.0.0
+    - pandas >=1.1.5
     - six >=1.9
 
 test:
@@ -33,7 +33,6 @@ about:
   home: https://github.com/ynqa/pandavro
   license: MIT
   license_family: MIT
-  # License file is manually packaged. Please see: https://github.com/ynqa/pandavro/pull/23
   license_file: LICENSE
   summary: The interface between Avro and pandas DataFrame
   doc_url: https://github.com/ynqa/pandavro/blob/master/README.md
