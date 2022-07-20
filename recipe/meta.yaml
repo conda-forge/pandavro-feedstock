@@ -1,5 +1,5 @@
 {% set name = "pandavro" %}
-{% set version = "1.7.0" %}
+{% set version = "1.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8f8486d908916092071a63dbee2bc324a8f2a1af1a6ed493d74dc6ef700a01a0
+  sha256: f71d50a4bc0706788e9e2721600778451dd1d19c7a52fe3aece4b4d9f93ebccf
 
 build:
   noarch: python
