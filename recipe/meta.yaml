@@ -16,15 +16,17 @@ build:
 
 requirements:
   host:
-    - python >=3.6.1
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6.1
+    - python >={{ python_min }}
     - fastavro >=1.5.1,<1.6.0
     - numpy >=1.15.4
     - pandas >=1.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pandavro
 
