@@ -1,16 +1,15 @@
 schema_version: 1
 
 context:
-  name: pandavro
-  version: "1.7.2"
+  version: 1.9.0
 
 package:
-  name: ${{ name|lower }}
+  name: pandavro
   version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 4f2b7b6823522f54e8bfe33c091fb29898349892b70634f46c928e6a42a76e69
+- url: https://github.com/ynqa/pandavro/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: c89834f39ee96d1bbed2227018bd8108e54cc46b6b4aa1c0cb74759c0661cfa2
 
 build:
   number: 0
@@ -21,11 +20,12 @@ requirements:
   host:
     - python ${{ python_min }}.*
     - pip
+    - setuptools
   run:
     - python >=${{ python_min }}
-    - fastavro >=1.5.1,<1.6.0
-    - numpy >=1.15.4
-    - pandas >=1.1
+    - fastavro <2.0.0,>=1.5.1
+    - numpy <3.0.0,>=2.0
+    - pandas <3.0.0,>=2.0
 
 tests:
   - python:
@@ -35,6 +35,14 @@ tests:
       python_version:
         - ${{ python_min }}.*
         - '*'
+  - script:
+      - pytest -vvv tests/
+    requirements:
+      run:
+        - pytest
+    files:
+      source:
+        - tests/
 
 about:
   license: MIT
@@ -47,4 +55,3 @@ about:
 extra:
   recipe-maintainers:
     - rabbit72
-
