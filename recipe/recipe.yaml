@@ -1,0 +1,58 @@
+schema_version: 1
+
+context:
+  version: 1.9.0
+
+package:
+  name: pandavro
+  version: ${{ version }}
+
+source:
+  url: https://github.com/ynqa/pandavro/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: c89834f39ee96d1bbed2227018bd8108e54cc46b6b4aa1c0cb74759c0661cfa2
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - fastavro <2.0.0,>=1.5.1
+    - numpy <3.0.0,>=2.0
+    - pandas <3.0.0,>=2.0
+
+tests:
+  - python:
+      imports:
+        - pandavro
+      pip_check: false
+      python_version:
+        - ${{ python_min }}.*
+        - '*'
+  - script:
+      - pytest -vvv tests/
+    requirements:
+      run:
+        - pytest
+    files:
+      source:
+        - tests/
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: The interface between Avro and pandas DataFrame
+  homepage: https://github.com/ynqa/pandavro
+  repository: https://github.com/ynqa/pandavro
+  documentation: https://github.com/ynqa/pandavro/blob/master/README.md
+
+extra:
+  recipe-maintainers:
+    - rabbit72
+    - jsmolic
