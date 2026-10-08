@@ -192,5 +192,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@jsmolic](https://github.com/jsmolic/)
 * [@rabbit72](https://github.com/rabbit72/)
 
